@@ -1,0 +1,27 @@
+mkdir -p /tmp/mario && cd /tmp/mario
+
+cat ~/data.txt | xxd -r > /tmp/mario/data.gz
+# data.gz: gzip compressed data, was "data2.bin", last modified: Thu Sep 19 07:08:15 2024, max compression, from Unix, original size modulo 2^32 574
+
+zcat data.gz > data.bz
+# data.bz: bzip2 compressed data, block size = 900k
+
+
+bzcat data.bz > data.gz
+# file data.out => data.out: gzip compressed data, was "data4.bin", last modified: Thu Sep 19 07:08:15 2024, max compression, from Unix, original size modulo 2^32 20480
+
+zcat data.gz > data.tar.gz
+
+tar --extract --file data.tar.gz
+# Generated data5.bin
+
+tar --extract --file data5.bin
+# Generated data6.bin
+
+bzcat data6.bin > data7.tar.gz
+
+tar --extract --file data7.tar.gz
+# generated data8.bin
+
+zcat data8.bin
+# SHOWS THE PASSWORD !!!

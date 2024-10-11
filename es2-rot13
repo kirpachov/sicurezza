@@ -1,0 +1,4 @@
+ar1=$(echo {a..z} {A..Z} | sed "s/\s//g")
+ar2=$(echo {n..z} {a..m} {N..Z} {A..M} | sed "s/\s//g")
+echo "jryy qbar thlf, lbh oebxr n pvcure jvgu frq" | sed y/$ar1/$ar2/
+

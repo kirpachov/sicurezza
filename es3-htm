@@ -1,0 +1,1 @@
+ls | sed --quiet /html/p | sed "y/$(echo {a..z})/$(echo {A..Z})/"
